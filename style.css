@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   /*
   background-image: url(./assets/bg-mobile.jpg);
@@ -11,4 +17,35 @@ body {
   background: <color> <image> <position/size>
   */
   background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+#container {
+  padding-top: 56px;
+  width: 360px;
+  margin: auto;
+}
+
+/* Não podemos aplicar "margin: auto" em elementos in-line por padrão (como imagens). Então,
+para centralizarmos a foto de perfil, precisamos ir até a div pai e alinharmos o elemento no centro.
+Essa ação é necessária porque elementos in-line só aceitam que seu pai defina sua posição na tela;
+A única coisa que faremos com a imagem é definir sua largura (112px;).
+ */
+.profile {
+  text-align: center;
+  padding: 24px;
+}
+
+.profile img {
+  width: 112px;
+}
+
+.profile p {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
 }
