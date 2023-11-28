@@ -49,3 +49,27 @@ A única coisa que faremos com a imagem é definir sua largura (112px;).
   font-weight: 500;
   line-height: 24px;
 }
+
+/* Estilizando Lista de Links com ênfase na div */
+ul {
+  list-style: none; /* Remove tópicos da lista */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* gap só funciona sob efeito de display: flex; */
+}
+
+/* Estilizando Lista de Links com ênfase em seus elementos */
+ul li a {
+  display: flex; /* Poderia ser usado também display: block & text-align: center, por ser elementos in-line */
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  font-weight: 500;
+
+  text-decoration: none; /* Remove sublinhado dos links */
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.5));
+  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
+  /* Adicionado "-webkit-..." para que o efeito de Blur seja visível em quaisquer navegadores. */
+  -webkit-backdrop-filter: blur(4px);
+}
