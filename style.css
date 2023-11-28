@@ -72,4 +72,15 @@ ul li a {
   background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
   /* Adicionado "-webkit-..." para que o efeito de Blur seja visível em quaisquer navegadores. */
   -webkit-backdrop-filter: blur(4px);
+
+  /* Aqui, adicionamos transição (animação) somente no background da Lista de Links. */
+  /* É possível também usar "all", por exemplo; mas isso traria transição para toda a página, */
+  /* Não só a lista de links. E nós não queremos isso! */
+  transition: background 0.3s;
+}
+
+/* Estilizando Lista de Links com ênfase na animação de seus elementos (pseudo-selector) */
+ul li a:hover {
+  border: 1.5px solid var(--text-color-dark-mode, #fff);
+  background: var(--surface-color-dark-mode-hover, rgba(255, 255, 255, 0.05));
 }
