@@ -25,9 +25,9 @@ body * {
 }
 
 #container {
-  padding-top: 56px;
   width: 360px;
-  margin: auto;
+  margin: 56px auto 0px; /* 56px em cima, automático nas laterais (para centralizar) e 0px embaixo, já que a página crescerá sozinha */
+  padding: 0px 24px; /* 0px em cima e embaixo, 24px nas laterais, respeitando a prototipação. */
 }
 
 /* Não podemos aplicar "margin: auto" em elementos in-line por padrão (como imagens). Então,
@@ -56,6 +56,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 16px; /* gap só funciona sob efeito de display: flex; */
+  padding: 24px 0;
 }
 
 /* Estilizando Lista de Links com ênfase em seus elementos */
@@ -65,17 +66,16 @@ ul li a {
   justify-content: center;
   padding: 16px 24px;
   font-weight: 500;
+  border-radius: 8px;
 
   text-decoration: none; /* Remove sublinhado dos links */
-  border-radius: 8px;
   border: 1px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.5));
   background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
-  /* Adicionado "-webkit-..." para que o efeito de Blur seja visível em quaisquer navegadores. */
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 
   /* Aqui, adicionamos transição (animação) somente no background da Lista de Links. */
   /* É possível também usar "all", por exemplo; mas isso traria transição para toda a página, */
-  /* Não só a lista de links. E nós não queremos isso! */
+  /* não só na lista de links. E nós não queremos isso! */
   transition: background 0.3s;
 }
 
@@ -91,3 +91,26 @@ ul li a:hover {
 Como ela está na div dos ELEMENTOS da Lista de Links, as animações serão neles! */
 
 /* O ul li a:hover diz o que muda ao passarmos o mouse por cima dos elementos na Lista de Links */
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  padding: 24px 0; /* Zeramos nas laterais porque já há 24px por padrão na div pai, que é #container */
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.3s;
+  border-radius: 50%; /* 50% é uma esfera perfeita. */
+}
+
+.social-links a:hover {
+  background: var(--highlight-color-dark-mode, rgba(255, 255, 255, 0.2));
+}
