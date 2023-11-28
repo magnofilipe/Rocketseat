@@ -11,7 +11,7 @@
   --background-color-hover: rgba(255, 255, 255, 0.05);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --stroke-color-hover: #fff;
-
+  --switch-background: url(./assets/MoonStars.svg);
   --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -22,7 +22,9 @@
   --background-color-hover: rgba(0, 0, 0, 0.02);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --stroke-color-hover: #000;
-
+  --switch-background: url(./assets/Sun.svg);
+  --switch-track-background: rgba(0, 0, 0, 0.05);
+  --switch-track-border: rgba(0, 0, 0, 0.5);
   --highlight-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -70,6 +72,41 @@ A única coisa que faremos com a imagem é definir sua largura (112px;).
   margin-top: 8px;
   font-weight: 500;
   line-height: 24px;
+}
+
+.switch {
+  /* Como vamos usar position: absolute, precisamos relativizar até onde é esse absoluto. */
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+.switch button {
+  width: 32px;
+  height: 32px;
+  background: #fff var(--switch-background) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 1;
+  /* Centralizando botão com position absolute */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.light .switch button {
+  right: 0;
+}
+
+.switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--background-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
 }
 
 /* Estilizando Lista de Links com ênfase na div */
