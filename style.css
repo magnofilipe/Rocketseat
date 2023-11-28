@@ -84,3 +84,10 @@ ul li a:hover {
   border: 1.5px solid var(--text-color-dark-mode, #fff);
   background: var(--surface-color-dark-mode-hover, rgba(255, 255, 255, 0.05));
 }
+
+/* ATENÇÃO: o transition e o "ul li a:hover" se complementam! */
+
+/* O transition diz onde será a animação e quanto tempo ela dura.
+Como ela está na div dos ELEMENTOS da Lista de Links, as animações serão neles! */
+
+/* O ul li a:hover diz o que muda ao passarmos o mouse por cima dos elementos na Lista de Links */
