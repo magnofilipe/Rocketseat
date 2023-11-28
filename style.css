@@ -4,6 +4,28 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: #fff;
+  --background-url: url(./assets/bg-mobile.jpg);
+  --background-color: rgba(255, 255, 255, 0.1);
+  --background-color-hover: rgba(255, 255, 255, 0.05);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --stroke-color-hover: #fff;
+
+  --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: #000;
+  --background-url: url(./assets/bg-mobile-light.jpg);
+  --background-color: rgba(0, 0, 0, 0.05);
+  --background-color-hover: rgba(0, 0, 0, 0.02);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --stroke-color-hover: #000;
+
+  --highlight-color: rgba(0, 0, 0, 0.1);
+}
+
 body {
   /*
   background-image: url(./assets/bg-mobile.jpg);
@@ -16,17 +38,17 @@ body {
 
   background: <color> <image> <position/size>
   */
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--background-url) no-repeat top center/cover;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 #container {
   width: 360px;
-  margin: 56px auto 0px; /* 56px em cima, automático nas laterais (para centralizar) e 0px embaixo, já que a página crescerá sozinha */
+  margin: 56px auto 56px; /* 56px em cima e embaixo, automático nas laterais (para centralizar) */
   padding: 0px 24px; /* 0px em cima e embaixo, 24px nas laterais, respeitando a prototipação. */
 }
 
@@ -69,8 +91,8 @@ ul li a {
   border-radius: 8px;
 
   text-decoration: none; /* Remove sublinhado dos links */
-  border: 1px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.5));
-  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--stroke-color);
+  background: var(--background-color);
   backdrop-filter: blur(4px);
 
   /* Aqui, adicionamos transição (animação) somente no background da Lista de Links. */
@@ -81,8 +103,8 @@ ul li a {
 
 /* Estilizando Lista de Links com ênfase na animação de seus elementos (pseudo-selector) */
 ul li a:hover {
-  border: 1.5px solid var(--text-color-dark-mode, #fff);
-  background: var(--surface-color-dark-mode-hover, rgba(255, 255, 255, 0.05));
+  border: 1.5px solid var(--stroke-color-hover);
+  background: var(--background-color-hover);
 }
 
 /* ATENÇÃO: o transition e o "ul li a:hover" se complementam! */
@@ -112,5 +134,22 @@ Como ela está na div dos ELEMENTOS da Lista de Links, as animações serão nel
 }
 
 .social-links a:hover {
-  background: var(--highlight-color-dark-mode, rgba(255, 255, 255, 0.2));
+  background: var(--highlight-color);
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 24px 0;
+}
+
+footer a {
+  transition: background 0.3s;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+footer a:hover {
+  background: var(--highlight-color);
 }
