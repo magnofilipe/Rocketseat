@@ -87,6 +87,7 @@ A única coisa que faremos com a imagem é definir sua largura (112px;).
   background: #fff var(--switch-background) no-repeat center;
   border: 0;
   border-radius: 50%;
+  cursor: pointer;
 
   position: absolute;
   z-index: 1;
