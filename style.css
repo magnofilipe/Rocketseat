@@ -192,3 +192,15 @@ footer a {
 footer a:hover {
   background: var(--highlight-color);
 }
+
+/* Media Queries */
+@media (min-width: 700px) {
+  /* Lê-se acima: "tudo o que está a partir de 700 pixels, atenda as regras abaixo:" */
+  :root {
+    --background-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --background-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
