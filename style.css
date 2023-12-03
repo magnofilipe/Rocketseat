@@ -82,6 +82,17 @@ A única coisa que faremos com a imagem é definir sua largura (112px;).
   margin: 4px auto;
 }
 
+/* Animação de transição do botão - Light Mode para Dark Mode */
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
 .switch button {
   width: 32px;
   height: 32px;
@@ -95,10 +106,25 @@ A única coisa que faremos com a imagem é definir sua largura (112px;).
   /* Centralizando botão com position absolute */
   top: 50%;
   transform: translateY(-50%);
+
+  animation: slide-out 0.4s;
+}
+
+/* Animação de transição do botão - Dark Mode para Light Mode */
+@keyframes slide-in {
+  /* O nome pode ser qualquer um. Escolhemos "slide-in". */
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 50%;
+  }
 }
 
 .light .switch button {
-  right: 0;
+  /* É preciso manter as propriedades do "to" para que o botão não volte para o estado original. Para isso, usamos "forwards" */
+  animation: slide-in 0.4s forwards;
 }
 
 .switch span {
