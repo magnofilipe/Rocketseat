@@ -49,7 +49,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 395px;
   margin: 56px auto 56px; /* 56px em cima e embaixo, automático nas laterais (para centralizar) */
   padding: 0px 24px; /* 0px em cima e embaixo, 24px nas laterais, respeitando a prototipação. */
 }
