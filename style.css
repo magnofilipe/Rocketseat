@@ -127,6 +127,7 @@ A única coisa que faremos com a imagem é definir sua largura (112px;).
   animation: slide-in 0.4s forwards;
 }
 
+/* Animação de "brilho" ao pôr mouse em cima do botão Dark/Light Mode */
 .switch button:hover {
   outline: 8px solid var(--highlight-color);
 }
